@@ -109,9 +109,10 @@ public class Adept {
             while (true) {
                 try {
                     result.append(b.readLine());
-                } catch (RuntimeException r) {
+                } catch (IOException a) {
                     break;
                 }
+
             }
             return result.toString();
         } catch (IOException a) {
@@ -120,8 +121,7 @@ public class Adept {
             if (b != null) {
                 try {
                     b.close();
-                } catch (IOException a) {
-                    return "An error occurred and the page could not be downloaded";
+                } catch (IOException ignored) {
                 }
             }
         }
