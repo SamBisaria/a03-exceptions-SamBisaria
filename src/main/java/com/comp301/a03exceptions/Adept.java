@@ -105,24 +105,22 @@ public class Adept {
         BufferedReader b = null;
         try {
             b = section5(urlText);
-        } catch (IOException a) {
-            return "An error occurred and the page could not be downloaded";
-        } finally {
-            try {
-                assert b != null;
-                b.close();
-            } catch (IOException e) {
-                return "An error occurred and the page could not be downloaded";
-            }
-        }
-        try {
             StringBuilder result = new StringBuilder();
-            while (b.readLine() != null) {
+            String l;
+            while ((l = b.readLine()) != null) {
                 result.append(b.readLine());
             }
             return result.toString();
         } catch (IOException a) {
             return "An error occurred and the page could not be downloaded";
+        } finally {
+            if (b != null) {
+                try {
+                    b.close();
+                } catch (IOException a) {
+                    return "An error occurred and the page could not be downloaded";
+                }
+            }
         }
     }
 }
