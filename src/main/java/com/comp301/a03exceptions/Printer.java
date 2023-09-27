@@ -8,10 +8,10 @@ package com.comp301.a03exceptions;
  */
 public interface Printer {
 
-  /**
-   * Call this method to "print" a String. Unlike System.out.println, this method doesn't actually
-   * print the string to the console. Instead, it just sends the string value straight to the
-   * autograder.
-   */
-  void print(String value);
+    /**
+     * Call this method to "print" a String. Unlike System.out.println, this method doesn't actually
+     * print the string to the console. Instead, it just sends the string value straight to the
+     * autograder.
+     */
+    void print(String value);
 }
