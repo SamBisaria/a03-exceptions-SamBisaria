@@ -66,6 +66,6 @@ public class Jedi {
             }
             return "One exception was caught";
         }
-        return "No exception occurred";
+        return "No exceptions were caught";
     }
 }

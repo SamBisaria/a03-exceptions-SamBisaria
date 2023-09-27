@@ -109,17 +109,18 @@ public class Adept {
             return "An error occurred and the page could not be downloaded";
         } finally {
             try {
+                assert b != null;
                 b.close();
             } catch (IOException e) {
                 return "An error occurred and the page could not be downloaded";
             }
         }
         try {
-            String result = "";
+            StringBuilder result = new StringBuilder();
             while (b.readLine() != null) {
-                result += b.readLine();
+                result.append(b.readLine());
             }
-            return result;
+            return result.toString();
         } catch (IOException a) {
             return "An error occurred and the page could not be downloaded";
         }
