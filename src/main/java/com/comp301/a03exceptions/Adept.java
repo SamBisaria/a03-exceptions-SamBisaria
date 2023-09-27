@@ -106,9 +106,12 @@ public class Adept {
         try {
             b = section5(urlText);
             StringBuilder result = new StringBuilder();
-            String l;
-            while ((l = b.readLine()) != null) {
-                result.append(b.readLine());
+            while (true) {
+                try {
+                    result.append(b.readLine());
+                } catch (RuntimeException r) {
+                    break;
+                }
             }
             return result.toString();
         } catch (IOException a) {
